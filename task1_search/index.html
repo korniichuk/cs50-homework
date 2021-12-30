@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Search</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> 
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-end">
+                    <a href="image_search.html">Images</a>
+                    <a href="advanced_search.html">Advanced search</a>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container">
+            <form action="https://google.com/search">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <input id="input_text" type="text" name="q">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6 text-end">
+                        <button type="submit" class="btn btn-primary">Google Search</button>
+                    </div>
+                    <div class="col-6 text-start">
+                        <button id="lucky_button" type="button" class="btn btn-primary">I'm Feeling Lucky</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script>
+        document.getElementById('lucky_button').addEventListener('click', ()=>{
+            let text = document.getElementById("input_text").value;
+            document.location.href = ("https://google.com/search?q=" + text + "&btnI=&sourceid=navclient&gfns=1");
+        })
+    </script>
+</html>
